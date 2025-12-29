@@ -1,0 +1,205 @@
+id,name,category,solid (y/n),outline (y/n),created (y/n)
+home,Home,General,y,y,y
+search,Search,General,y,y,y
+menu,Menu,General,y,y,y
+settings,Settings,General,y,y,y
+user,User,User,y,y,n
+user-circle,User Circle,User,y,y,n
+user-add,User Add,User,y,y,n
+users,Users Group,User,y,y,n
+bell,Notification,General,y,y,y
+heart,Heart,General,y,y,y
+star,Star,General,y,y,y
+check,Check,Interface,y,y,n
+check-circle,Check Circle,Interface,y,y,n
+cross,Cross / Close,Interface,y,y,n
+cross-circle,Cross Circle,Interface,y,y,n
+plus,Plus / Add,Interface,y,y,n
+plus-circle,Plus Circle,Interface,y,y,n
+minus,Minus / Remove,Interface,y,y,n
+minus-circle,Minus Circle,Interface,y,y,n
+alert-triangle,Alert Warning,Interface,y,y,n
+alert-circle,Alert Info,Interface,y,y,n
+help-circle,Help / Question,Interface,y,y,n
+info,Info,Interface,y,y,n
+arrow-left,Arrow Left,Arrows,y,y,n
+arrow-right,Arrow Right,Arrows,y,y,n
+arrow-up,Arrow Up,Arrows,y,y,n
+arrow-down,Arrow Down,Arrows,y,y,n
+chevron-left,Chevron Left,Arrows,y,y,n
+chevron-right,Chevron Right,Arrows,y,y,n
+chevron-up,Chevron Up,Arrows,y,y,n
+chevron-down,Chevron Down,Arrows,y,y,n
+chevrons-left,Double Chevron Left,Arrows,y,y,n
+chevrons-right,Double Chevron Right,Arrows,y,y,n
+caret-down,Caret Down,Arrows,y,y,n
+caret-up,Caret Up,Arrows,y,y,n
+external-link,External Link,General,y,y,y
+refresh,Refresh,General,y,y,y
+rotate-cw,Rotate Clockwise,General,y,y,y
+rotate-ccw,Rotate Counter-Clockwise,General,y,y,y
+login,Log In,General,y,y,y
+logout,Log Out,General,y,y,y
+dots-vertical,More Vertical,General,y,y,y
+dots-horizontal,More Horizontal,General,y,y,y
+grid,Grid / Dashboard,General,y,y,y
+list,List,General,y,y,y
+filter,Filter,General,y,y,y
+sort,Sort,General,y,y,y
+edit,Edit / Pencil,General,y,y,y
+trash,Trash / Delete,General,y,y,y
+share,Share,General,y,y,y
+download,Download,General,y,y,y
+upload,Upload,General,y,y,y
+copy,Copy,General,y,y,y
+clipboard,Clipboard,General,y,y,y
+paperclip,Attachment,Office,y,y,n
+link,Link,General,y,y,y
+mail,Mail,Communication,y,y,n
+paper-plane,Send,Communication,y,y,n
+message-square,Chat Bubble,Communication,y,y,n
+message-circle,Chat Circle,Communication,y,y,n
+phone,Phone,Communication,y,y,n
+camera,Camera,Media,y,y,n
+video,Video,Media,y,y,n
+mic,Microphone,Media,y,y,n
+image,Image,Media,y,y,n
+play,Play,Media,y,y,n
+pause,Pause,Media,y,y,n
+stop-circle,Stop,Media,y,y,n
+skip-back,Skip Previous,Media,y,y,n
+skip-forward,Skip Next,Media,y,y,n
+volume-2,Volume High,Media,y,y,n
+volume-x,Volume Mute,Media,y,y,n
+folder,Folder,Office,y,y,n
+folder-open,Folder Open,Office,y,y,n
+file,File Generic,Office,y,y,n
+file-text,File Text,Office,y,y,n
+calendar,Calendar,Time,y,y,n
+clock,Clock,Time,y,y,n
+map-pin,Map Pin,Location,y,y,n
+map,Map,Location,y,y,n
+compass,Compass,Location,y,y,n
+globe,Globe,Location,y,y,n
+lock,Lock,Security,y,y,n
+unlock,Unlock,Security,y,y,n
+eye,Eye / Show,Security,y,y,n
+eye-off,Eye / Hide,Security,y,y,n
+shield,Shield,Security,y,y,n
+key,Key,Security,y,y,n
+credit-card,Credit Card,Commerce,y,y,n
+shopping-cart,Shopping Cart,Commerce,y,y,n
+shopping-bag,Shopping Bag,Commerce,y,y,n
+tag,Tag,Commerce,y,y,n
+gift,Gift,Commerce,y,y,n
+percent,Percent / Discount,Commerce,y,y,n
+dollar-sign,Dollar,Commerce,y,y,n
+briefcase,Briefcase,Office,y,y,n
+layers,Layers,Editor,y,y,n
+layout,Layout,Editor,y,y,n
+monitor,Monitor,Devices,y,y,n
+smartphone,Smartphone,Devices,y,y,n
+tablet,Tablet,Devices,y,y,n
+wifi,Wifi,Devices,y,y,n
+battery,Battery,Devices,y,y,n
+battery-charging,Battery Charging,Devices,y,y,n
+sun,Sun,Weather,y,y,n
+moon,Moon,Weather,y,y,n
+cloud,Cloud,Weather,y,y,n
+rain,Rain,Weather,y,y,n
+lightning,Lightning,Weather,y,y,n
+thumbs-up,Thumbs Up,Interface,y,y,n
+thumbs-down,Thumbs Down,Interface,y,y,n
+smile,Smile,Interface,y,y,n
+frown,Frown,Interface,y,y,n
+bold,Bold,Editor,y,y,n
+italic,Italic,Editor,y,y,n
+underline,Underline,Editor,y,y,n
+type,Type / Text,Editor,y,y,n
+align-left,Align Left,Editor,y,y,n
+align-center,Align Center,Editor,y,y,n
+align-right,Align Right,Editor,y,y,n
+align-justify,Align Justify,Editor,y,y,n
+list-ordered,List Ordered,Editor,y,y,n
+list-bullet,List Bullet,Editor,y,y,n
+code,Code,Development,y,y,n
+terminal,Terminal,Development,y,y,n
+database,Database,Development,y,y,n
+server,Server,Development,y,y,n
+cpu,CPU,Development,y,y,n
+save,Save / Floppy,Office,y,y,n
+printer,Printer,Office,y,y,n
+hard-drive,Hard Drive,Devices,y,y,n
+truck,Truck,Office,y,y,n
+package,Package,Office,y,y,n
+activity,Activity / Pulse,General,y,y,y
+bar-chart,Bar Chart,Finance,y,y,n
+pie-chart,Pie Chart,Finance,y,y,n
+trending-up,Trending Up,Finance,y,y,n
+trending-down,Trending Down,Finance,y,y,n
+loader,Loader / Spinner,General,y,y,y
+power,Power,General,y,y,y
+zap,Zap / Instant,General,y,y,y
+toggle-left,Toggle Off,General,y,y,y
+toggle-right,Toggle On,General,y,y,y
+scissors,Scissors,Editor,y,y,n
+bookmark,Bookmark,General,y,y,y
+flag,Flag,General,y,y,y
+anchor,Anchor,General,y,y,y
+tool,Tool,General,y,y,y
+box,Box,Office,y,y,n
+navigation,Navigation,Location,y,y,n
+crosshair,Crosshair,General,y,y,y
+disc,Disc,Media,y,y,n
+droplet,Droplet,Weather,y,y,n
+thermometer,Thermometer,Weather,y,y,n
+umbrella,Umbrella,Weather,y,y,n
+wind,Wind,Weather,y,y,n
+maximize,Maximize,General,y,y,y
+minimize,Minimize,General,y,y,y
+move,Move,General,y,y,y
+crop,Crop,Editor,y,y,n
+mouse-pointer,Mouse Pointer,General,y,y,y
+cast,Cast,Media,y,y,n
+airplay,Airplay,Media,y,y,n
+bluetooth,Bluetooth,Media,y,y,n
+speaker,Speaker,Media,y,y,n
+headphones,Headphones,Media,y,y,n
+radio,Radio,Media,y,y,n
+tv,TV,Media,y,y,n
+voicemail,Voicemail,Communication,y,y,n
+pocket,Pocket,Brand,y,y,n
+award,Award,General,y,y,y
+coffee,Coffee,General,y,y,y
+columns,Columns,Editor,y,y,n
+command,Command,Development,y,y,n
+corner-down-left,Corner Down Left,Arrows,y,y,n
+corner-down-right,Corner Down Right,Arrows,y,y,n
+corner-left-down,Corner Left Down,Arrows,y,y,n
+corner-left-up,Corner Left Up,Arrows,y,y,n
+corner-right-down,Corner Right Down,Arrows,y,y,n
+corner-right-up,Corner Right Up,Arrows,y,y,n
+corner-up-left,Corner Up Left,Arrows,y,y,n
+corner-up-right,Corner Up Right,Arrows,y,y,n
+circle,Circle Geometry,Shapes,y,y,n
+square,Square Geometry,Shapes,y,y,n
+triangle,Triangle Geometry,Shapes,y,y,n
+octagon,Octagon Geometry,Shapes,y,y,n
+hexagon,Hexagon Geometry,Shapes,y,y,n
+divide,Divide,Shapes,y,y,n
+slash,Slash,Shapes,y,y,n
+hash,Hash,Shapes,y,y,n
+at-sign,At Sign,Shapes,y,y,n
+facebook,Facebook,Brand,y,y,n
+instagram,Instagram,Brand,y,y,n
+linkedin,LinkedIn,Brand,y,y,n
+twitter,Twitter,Brand,y,y,n
+youtube,YouTube,Brand,y,y,n
+github,GitHub,Brand,y,y,n
+slack,Slack,Brand,y,y,n
+figma,Figma,Brand,y,y,n
+chrome,Chrome,Brand,y,y,n
+codepen,Codepen,Brand,y,y,n
+trello,Trello,Brand,y,y,n
+twitch,Twitch,Brand,y,y,n
+gitlab,GitLab,Brand,y,y,n
