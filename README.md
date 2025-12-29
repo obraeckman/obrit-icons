@@ -8,6 +8,12 @@ A free, open-source set of stylish, modern SVG icons in outline and solid format
   <img src="https://img.shields.io/github/license/obraeckman/obrit-icons" alt="License">
 </p>
 
+<p align="center">
+  <a href="https://htmlpreview.github.io/?https://github.com/obraeckman/obrit-icons/blob/main/docs/icon-viewer.html">
+    <img src="https://img.shields.io/badge/🔍_Preview_Icons-View_All_Icons-blue?style=for-the-badge" alt="Preview Icons">
+  </a>
+</p>
+
 ## ✨ Features
 
 - **354 Icons** across 18 categories
