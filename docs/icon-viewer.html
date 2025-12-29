@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrit Icons Viewer</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #334155;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --border: #475569;
+      --success: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-logo {
+      max-width: 280px;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      color: var(--text-secondary);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 1rem;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .header-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--border);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .controls {
+      background: var(--bg-secondary);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-box {
+      position: relative;
+      width: 300px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .search-box::before {
+      content: '🔍';
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .style-toggle {
+      display: flex;
+      background: var(--bg-primary);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .style-toggle button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .style-toggle button.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    .main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .category {
+      margin-bottom: 3rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .category-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    .category-count {
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+    }
+
+    .icons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 1rem;
+    }
+
+    .icon-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .icon-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .icon-card img {
+      width: 28px;
+      height: 28px;
+      filter: invert(1);
+    }
+
+    .icon-name {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      text-align: center;
+      word-break: break-word;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 4rem;
+      color: var(--text-secondary);
+      display: none;
+    }
+
+    .copy-toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--success);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 1000;
+    }
+
+    .copy-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .icons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      }
+    }
+
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .footer p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .license {
+      display: inline-block;
+      background: var(--bg-card);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <img src="logo.png" alt="OBRIT Icons" class="header-logo">
+    <p>A free, open-source set of stylish, modern SVG icons</p>
+    <div class="stats">
+      <div><span class="stat-value">354</span> <span class="stat-label">Icons</span></div>
+      <div><span class="stat-value">18</span> <span class="stat-label">Categories</span></div>
+    </div>
+    <div class="header-actions">
+      <a href="https://github.com/obraeckman/obrit-icons" target="_blank" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58 0-.29-.01-1.24-.02-2.25-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.93.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28 0 .32.19.7.8.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
+        </svg>
+        View on GitHub
+      </a>
+      <button class="btn btn-secondary" onclick="copyRepoUrl()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+        </svg>
+        Copy Repo URL
+      </button>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Search icons..." oninput="filterIcons()">
+    </div>
+    <div class="style-toggle">
+      <button class="active" onclick="setStyle('outline', this)">Outline</button>
+      <button onclick="setStyle('solid', this)">Solid</button>
+    </div>
+  </div>
+
+  <main class="main" id="main"></main>
+
+  <div class="no-results" id="no-results">
+    <h3>No icons found</h3>
+    <p>Try a different search term</p>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 OBRIT Consulting SRL. All rights reserved.</p>
+    <span class="license">MIT License</span>
+  </footer>
+
+  <div class="copy-toast" id="toast">Copied icon name!</div>
+
+  <script>
+    const BASE_URL = 'https://cdn.jsdelivr.net/gh/obraeckman/obrit-icons@main';
+    let currentStyle = 'outline';
+
+    const iconData = {
+      general: ['search', 'menu', 'settings', 'bell', 'heart', 'star', 'external-link', 'refresh', 'rotate-cw', 'rotate-ccw', 'login', 'logout', 'dots-vertical', 'dots-horizontal', 'grid', 'list', 'filter', 'sort', 'edit', 'trash', 'share', 'download', 'upload', 'copy', 'clipboard', 'link', 'activity', 'loader', 'power', 'zap', 'toggle-left', 'toggle-right', 'bookmark', 'flag', 'anchor', 'tool', 'crosshair', 'maximize', 'minimize', 'move', 'mouse-pointer', 'award', 'coffee', 'home'],
+      arrows: ['arrow-left', 'arrow-right', 'arrow-up', 'arrow-down', 'chevron-left', 'chevron-right', 'chevron-up', 'chevron-down', 'chevrons-left', 'chevrons-right', 'caret-up', 'caret-down', 'corner-down-left', 'corner-down-right', 'corner-left-down', 'corner-left-up', 'corner-right-down', 'corner-right-up', 'corner-up-left', 'corner-up-right'],
+      media: ['camera', 'video', 'mic', 'image', 'play', 'pause', 'stop-circle', 'skip-back', 'skip-forward', 'volume-2', 'volume-x', 'disc', 'cast', 'airplay', 'bluetooth', 'speaker', 'headphones', 'radio', 'tv'],
+      interface: ['check', 'check-circle', 'cross', 'cross-circle', 'plus', 'plus-circle', 'minus', 'minus-circle', 'alert-triangle', 'alert-circle', 'help-circle', 'info', 'thumbs-up', 'thumbs-down', 'smile', 'frown'],
+      user: ['user', 'user-circle', 'user-add', 'users'],
+      communication: ['mail', 'paper-plane', 'message-square', 'message-circle', 'phone', 'voicemail'],
+      office: ['paperclip', 'folder', 'folder-open', 'file', 'file-text', 'briefcase'],
+      time: ['calendar', 'clock'],
+      location: ['map-pin', 'map', 'compass', 'globe', 'navigation'],
+      security: ['shield', 'lock', 'unlock', 'key', 'eye', 'eye-off'],
+      commerce: ['shopping-cart', 'shopping-bag', 'credit-card', 'tag', 'gift'],
+      devices: ['monitor', 'laptop', 'smartphone', 'tablet', 'watch'],
+      weather: ['sun', 'moon', 'cloud', 'cloud-rain', 'cloud-snow', 'cloud-lightning', 'droplet', 'thermometer', 'wind'],
+      editor: ['edit-2', 'edit-3', 'align-left', 'align-center', 'align-right', 'align-justify', 'bold', 'type'],
+      development: ['code', 'terminal', 'database', 'server', 'git-branch'],
+      finance: ['dollar-sign', 'percent', 'trending-up', 'trending-down'],
+      brand: ['github', 'twitter', 'facebook', 'linkedin'],
+      shapes: ['circle', 'square', 'triangle', 'star', 'diamond', 'hexagon', 'octagon', 'pentagon', 'heart']
+    };
+
+    function getIconUrl(category, name) {
+      const suffix = currentStyle === 'outline' ? '-outline' : '-solid';
+      return `${BASE_URL}/${currentStyle}/${category}/${name}${suffix}.svg`;
+    }
+
+    function renderIcons() {
+      const main = document.getElementById('main');
+      main.innerHTML = '';
+
+      Object.keys(iconData).sort().forEach(category => {
+        const icons = iconData[category];
+        const section = document.createElement('section');
+        section.className = 'category';
+        section.dataset.category = category;
+
+        let iconsHtml = icons.map(name => `
+          <div class="icon-card" data-name="${name}" onclick="copyName('${name}')">
+            <img src="${getIconUrl(category, name)}" alt="${name}" loading="lazy">
+            <span class="icon-name">${name}</span>
+          </div>
+        `).join('');
+
+        section.innerHTML = `
+          <div class="category-header">
+            <h2 class="category-name">${category}</h2>
+            <span class="category-count">${icons.length} icons</span>
+          </div>
+          <div class="icons-grid">${iconsHtml}</div>
+        `;
+
+        main.appendChild(section);
+      });
+    }
+
+    function setStyle(style, btn) {
+      currentStyle = style;
+      document.querySelectorAll('.style-toggle button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderIcons();
+      filterIcons();
+    }
+
+    function filterIcons() {
+      const query = document.getElementById('search').value.toLowerCase();
+      let hasResults = false;
+
+      document.querySelectorAll('.category').forEach(section => {
+        let categoryHasVisible = false;
+        section.querySelectorAll('.icon-card').forEach(card => {
+          const name = card.dataset.name;
+          const match = name.includes(query);
+          card.classList.toggle('hidden', !match);
+          if (match) categoryHasVisible = true;
+        });
+        section.classList.toggle('hidden', !categoryHasVisible);
+        if (categoryHasVisible) hasResults = true;
+      });
+
+      document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
+    }
+
+    function copyName(name) {
+      navigator.clipboard.writeText(name).then(() => {
+        const toast = document.getElementById('toast');
+        toast.textContent = `Copied: ${name}`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
+
+    function copyRepoUrl() {
+      navigator.clipboard.writeText('https://github.com/obraeckman/obrit-icons').then(() => {
+        const toast = document.getElementById('toast');
+        toast.textContent = 'Copied: https://github.com/obraeckman/obrit-icons';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
+
+    renderIcons();
+  </script>
+</body>
+
+</html>
